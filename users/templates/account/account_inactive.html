@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load allauth %}
+{% block head_title %}
+    {% translate "Account Inactive" %}
+{% endblock head_title %}
+{% block content %}
+    {% element h1 %}
+        Account Inactive
+    {% endelement %}
+    {% element p %}
+        This account is inactive.
+    {% endelement %}
+{% endblock content %}

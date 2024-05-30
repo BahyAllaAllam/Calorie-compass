@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load allauth %}
+{% block head_title %}
+    Confirm Access
+{% endblock head_title %}
+{% block content %}
+    {% element h1 %}
+        Confirm Access
+    {% endelement %}
+    {% element p %}
+        Please reauthenticate to safeguard your account.{% endblocktranslate
+    {% endelement %}
+    {% block reauthenticate_content %}{% endblock %}
+    {% if reauthentication_alternatives %}
+        {% element hr %}
+        {% endelement %}
+        {% element h2 %}
+            Alternative options
+        {% endelement %}
+        <ul>
+            {% for alt in reauthentication_alternatives %}
+                <li>
+                    <a href="{{ alt.url }}">{{ alt.description }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock content %}
