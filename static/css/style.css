@@ -1,0 +1,108 @@
+body {
+  background-color: transparent;
+  padding: 30px;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: transparent;
+  font-weight: 400;
+  padding: 50px;
+  border: 2px solid #ccc;
+  box-shadow: 3px 3px;
+  border-radius: 15px;
+  width: 50%;
+  margin: auto; /* Centers the container */
+  position: relative; /* Ensures the text is above the background image */
+}
+
+.logo {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"] {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #0c650f;
+}
+
+a {
+  text-decoration: none;
+  color: #0c650f;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.forgot-password {
+  font-size: 14px;
+  margin-bottom: 15px;
+  align-self: flex-center;
+}
+.social-login a {
+  font-size: 0; /* Hide the text */
+}
+
+.social-login a i {
+  font-size: 45px; /* Set the icon size */
+}
+
+/* Styling the profile picture section */
+.form-group {
+  margin-bottom: 20px;
+}
+
+#profilePicture {
+  margin-bottom: 10px;
+}
+
+#profilePicturePreview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
