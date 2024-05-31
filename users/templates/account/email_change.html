@@ -1,9 +1,11 @@
-{% extends "base.html" %}
+{% extends "base_generic.html" %}
 {% load allauth %}
-{% block head_title %}
-    Email Address
-{% endblock head_title %}
-{% block content %}
+
+{% block extra_head %}
+    - Email Address
+{% endblock extra_head %}
+
+{% block auth_content %}
     {% element h1 %}
         Email Address
     {% endelement %}
@@ -64,4 +66,4 @@
             <input type="hidden" name="email" value="{{ new_emailaddress.email }}">
         </form>
     {% endif %}
-{% endblock content %}
+{% endblock auth_content %}

@@ -1,9 +1,11 @@
-{% extends "base.html" %}
+{% extends "base_generic.html" %}
 {% load allauth i18n %}
-{% block head_title %}
-    Email Addresses
-{% endblock head_title %}
-{% block content %}
+
+{% block extra_head %}
+    - Email Addresses
+{% endblock extra_head %}
+
+{% block auth_content %}
     {% element h1 %}
         Email Addresses
     {% endelement %}
@@ -72,7 +74,7 @@
             {% endslot %}
         {% endelement %}
     {% endif %}
-{% endblock content %}
+{% endblock auth_content %}
 {% block extra_body %}
     <script type="text/javascript">
 (function() {

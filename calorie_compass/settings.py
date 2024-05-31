@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
+    # 3rd party apps
+    "bootstrap5",
     #######################
     'django.contrib.admin',
     'django.contrib.auth',
@@ -166,7 +168,7 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 ACCOUNT_LOGIN_BY_CODE_ENABLED = True
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE  = True
-ACCOUNT_SIGNUP_FORM_HONEYPOT_FIELD = True
+ACCOUNT_SIGNUP_FORM_HONEYPOT_FIELD = False
 SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True
 SITE_ID = 1
 
