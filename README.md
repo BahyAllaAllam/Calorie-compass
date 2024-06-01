@@ -39,8 +39,9 @@ Calorie Compass is a platform where we share our thoughts, experiences, and insp
 
 7. **Create the Necessary Apps**:
     For example, to create the `users` app:
-        ```sh
-        django-admin startapp users
+    ```sh
+    django-admin startapp users
+    ```
 
 8. **Replace Project Files**:
     Replace your project files with the provided files.
