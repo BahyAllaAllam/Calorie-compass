@@ -17,7 +17,7 @@ Calorie Compass is a platform where we share our thoughts, experiences, and insp
    ```sh
    pip install virtualenv
 
-3. **Create a Virtual Environment:
+3. **Create a Virtual Environment**:
    ```sh
    virtualenv src
 
