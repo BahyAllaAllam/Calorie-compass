@@ -22,10 +22,9 @@ Calorie Compass is a platform where we share our thoughts, experiences, and insp
    virtualenv src
 
 4. **Activate the Virtual Environment**:
-  Navigate to the `src` directory, then activate the virtual environment.
-- On Windows:
-  ```sh
-   src\Scripts\activate
+    - On Windows:
+        ```sh
+        src\Scripts\activate
 - On macOS/Linux:
   ```sh
   source src/bin/activate
