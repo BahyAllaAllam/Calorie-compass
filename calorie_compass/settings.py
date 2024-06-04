@@ -38,6 +38,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # my_apps
     'users.apps.UsersConfig',
+    'meals_tracker.apps.MealsTrackerConfig',
     # All Auth configuration
     'allauth',
     'allauth.account',
@@ -159,7 +160,7 @@ ACCOUNT_USERNAME_BLACKLIST = [
 
 SOCIALACCOUNT_PROVIDERS = {}
 
-LOGIN_REDIRECT_URL = '/'
+# LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -170,7 +171,7 @@ ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE  = True
 ACCOUNT_SIGNUP_FORM_HONEYPOT_FIELD = False
 SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True
-SITE_ID = 1
+# SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

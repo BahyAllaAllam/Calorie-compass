@@ -22,7 +22,9 @@
                 crossorigin="anonymous">
 
         </script>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        {% block styles %}
+            <link rel="stylesheet" href="{% static 'css/index-style.css' %}" />
+        {% endblock styles %}
         <link rel="icon" href="{% static 'img/logo.png' %}" type="image/png" />
         <title>
             {% block head_title %}
@@ -37,7 +39,7 @@
         <header class="nav-bar">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/">
                         <img class="logo" src="{% static 'img/logo.png' %}" alt="Calorie Compass Logo"/>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -50,25 +52,27 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#products">Our Products</a>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"
+                                   href="" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">Our Products</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'meals_tracker:calorie_calc' %}">Calorie Calculation</a>
+                                    </li>
+                                    {% if user.is_authenticated %}
+                                    <li>
+                                        <a class="dropdown-item" href="meal-tracking.html">Daily Meal Tracker</a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="about.html">About Us</a>
-                            </li>
+
                             {% if user.is_authenticated %}
-                                {% url 'account_email' as email_url %}
-                                {% if email_url %}
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="{{ email_url }}">Change Email</a>
+                                        <a class="nav-link active" aria-current="page" href="{% url 'users:profile_edit' %}">Profile</a>
                                     </li>
-                                {% endif %}
-                                {% url 'account_change_password' as change_password_url %}
-                                {% if change_password_url %}
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="{{ change_password_url }}">Change Password</a>
-                                    </li>
-                                {% endif %}
                                 {% url 'account_logout' as logout_url %}
                                 {% if logout_url %}
                                     <li class="nav-item">
@@ -89,6 +93,9 @@
                                     </li>
                                 {% endif %}
                             {% endif %}
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'meals_tracker:about_page' %}">About Us</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -123,14 +130,12 @@
               </div>
               <div class="col-md-6 p-5">
                 <img
-                  src="images/main.png"
+                  src="{% static 'img/main.png' %}"
                   alt="Calorie Compass is your ultimate guide in your weight loss journey"
-                  class="img-fluid custom-main-image"
-                />
+                  class="img-fluid custom-main-image"/>
               </div>
             </div>
           </div>
-
           <h1 class="text-center p-6 our-products">Our Products</h1>
           <div class="container-fluid meal-tracking">
             <div class="row">
@@ -145,12 +150,9 @@
                 </p>
               </div>
               <div class="col-md-6 p-5">
-                <a href="meal-tracking.html"
-                  ><img
-                    src="images/meal-suggestion.png"
-                    alt=""
-                    class="img-fluid custom-main-image"
-                /></a>
+                <a href="meal-tracking.html">
+                    <img src="{% static 'img/meal-suggestion.png' %}" alt="meal suggestion" class="img-fluid custom-main-image"/>
+                </a>
               </div>
             </div>
           </div>
@@ -158,11 +160,8 @@
             <div class="row">
               <div class="col-md-6 p-5">
                 <a href="calorie-calc.html">
-                  <img
-                    src="images/meal-tracker.png"
-                    alt=""
-                    class="img-fluid custom-main-image"
-                /></a>
+                  <img src="{% static 'img/meal-tracker.png' %}" alt="meal tracker" class="img-fluid custom-main-image"/>
+                </a>
               </div>
               <div class="col-md-6 p-5">
                 <p>
@@ -180,10 +179,14 @@
         {% endblock content %}
         {% block extra_body %}
         {% endblock extra_body %}
+        {% block footer %}
         <footer>
             Build by <a href="https://github.com/KariMaa-MahMoud" target="_blank"> Karima Mahmoud</a> &
             <a href="https://github.com/BahyAllaAllam" target="_blank"> Bahy Allam</a>
         </footer>
+        {% endblock footer %}
+        {% block scripts %}
         <script src="{% static 'js/scripts.js' %}"></script>
+        {% endblock scripts %}
     </body>
 </html>

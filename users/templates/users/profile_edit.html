@@ -1,6 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
+{% load bootstrap5 %}
 
-{% block body %}
+
+{% block content %}
             <div class="content">
                 <div class="col-md-8">
                     <div class="content-section">
@@ -19,14 +22,14 @@
                             {% csrf_token %}
                             <fieldset class="form-group">
                                 <legend class="border-bottom mb-4 text-center">Profile Info</legend>
-                                {{ u_form }}
-                                {{ p_form }}
+                                {% bootstrap_form u_form %}
+                                {% bootstrap_form p_form %}
                             </fieldset>
-                            <button class="boxed-btn3 w-100 mt-4" type="submit">Update</button>
+                            <button class="btn btn-outline-success w-100 mt-4" type="submit">Update</button>
                             <a class="btn btn-outline-danger w-100 mt-4" href="/">Cancel</a>
                         </form>
                     </div>
                 </div>
             </div>
 
-{%  endblock body%}
+{%  endblock content %}
