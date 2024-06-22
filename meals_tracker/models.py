@@ -3,23 +3,6 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 
 
-# Create your models here.
-class Food(models.Model):
-    name = models.CharField(max_length=200, unique=True)
-    calories = models.IntegerField(default=0)
-    protien = models.DecimalField(default=0, max_digits=4, decimal_places=1)
-    fats = models.DecimalField(default=0, max_digits=4, decimal_places=1)
-    cholesterol = models.DecimalField(default=0, max_digits=4, decimal_places=1)
-
-    def __str__(self):
-        """Return a string representation of the food."""
-        return self.name
-
-    class Meta:
-        """The plural name used in the admin interface for the model."""
-        verbose_name_plural = "Foods"
-
-
 class Meals(models.Model):
     name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(null=True, blank=True)
