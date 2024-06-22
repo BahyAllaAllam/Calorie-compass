@@ -187,3 +187,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # for testing the email backend only
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+CALORIE_NINJAS_API_KEY = "L3CXnXFXDdyk1eD+K2XfaQ==gzk5Thrkwk67Gkcv"
